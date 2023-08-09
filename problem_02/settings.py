@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vn_i@fp#l==12fd4&t!k8mvni=a3p5n6gv&wy(iwm6w0_$mp+$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh',"127.0.0.1"]
 
 
 # Application definition
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'CRUD'
 ]
 
 MIDDLEWARE = [
@@ -68,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'problem_02.wsgi.app'
+WSGI_APPLICATION = 'problem_02.wsgi.application'
 
 
 # Database
