@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<div class="navbar">
+    <a href="{% url 'home' %}">Read</a>
+    <a href="{% url 'create' %}">Create</a>
+    <a href="{% url 'update' %}">Update</a>
+    <a href="{% url 'delete' %}">Delete</a>
+</div>
+<h1>Update Data</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="key_to_update">Select Key to Update:</label>
+    <select name="key_to_update" id="key_to_update">
+        {% for key in keys %}
+        <option value="{{ key }}">{{ key }}</option>
+        {% endfor %}
+    </select><br>
+    <label>New Value:</label>
+    <input type="text" name="new_value" required><br>
+    <input type="submit" value="Update">
+</form>
+</body>
+<script>
+    function showAlert() {
+        const alertElement = document.getElementById('alert');
+        alertElement.style.display = 'block';
+        setTimeout(() => {
+            alertElement.style.display = 'none';
+        }, 3000);  // Hide alert after 3 seconds
+    }
+</script>
+</html>
